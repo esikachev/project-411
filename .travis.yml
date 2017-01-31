@@ -16,4 +16,5 @@ matrix:
        env: TOX_ENV=py27
 
 script:
+  - python tests/tests.py
   - tox -e "${TOX_ENV}"
