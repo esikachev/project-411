@@ -1,0 +1,14 @@
+.message {
+    position: relative;
+    display: block;
+}
+.client_message {
+    background: pink;
+    /*TODO: display left side*/
+    text-align: left;
+}
+.bot_message {
+    background: skyblue;
+    /*TODO: display right side*/
+    text-align: right;
+}

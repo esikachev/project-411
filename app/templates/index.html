@@ -4,16 +4,28 @@
 <head>
     <meta charset="utf-8">
     <title>Chat bot</title>
+    <!--TODO: include css file-->
+
+    <!--TODO: possibly download and connect from local-->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-    <script src="{{url_for('static', filename='js.js')}}"></script>
     <script type="text/javascript" charset="utf-8">
         var socket = io.connect('http://' + document.domain + ':' + location.port);
         socket.on('connect', function() {
             emit('message', 'I\'m connected!');
         });
     </script>
+    <script src="{{url_for('static', filename='js.js')}}"></script>
 </head>
 <body>
-    <button onclick="emit('message', 'test')">emit.</button>
+    <div>
+        <!--TEST UI/UX: client messages-->
+        <div><div class="message client_message">message</div></div>
+        <!--TODO: just UI/UX: bot messages-->
+        <div><div class="message bot_message">message</div></div>
+    </div>
+    <div>
+        <input type="text" id="messageBox">
+        <button onclick="emit('message', document.getElementById('messageBox'))">emit.</button>
+    </div>
 </body>
 </html>
