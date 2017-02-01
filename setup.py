@@ -27,4 +27,8 @@ setup(
     pbr=True,
 
     packages=find_packages(exclude=['docs', 'tests']),
+  
+    setup_requires=['pbr>=1.8'],
+  
+    pbr=True
 )
