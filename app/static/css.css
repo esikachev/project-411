@@ -3,11 +3,11 @@
 }
 .client_message {
     background: pink;
-    /*TODO: display left side*/
-    text-align: left;
+    /*TODO: display right side*/
+    text-align: right;
 }
 .bot_message {
     background: skyblue;
-    /*TODO: display right side*/
-    text-align: right;
+    /*TODO: display left side*/
+    text-align: left;
 }
