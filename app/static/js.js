@@ -1,6 +1,9 @@
 var socket = io.connect('http://' + document.domain + ':' + location.port);
-socket.on('connect', function() {
+socket.on('connect', function () {
     emit('message', 'I\'m connected!');
+});
+socket.on('message', function(data){
+    print_message('bot_message', data);
 });
 
 function emit(event, message) {
@@ -9,6 +12,11 @@ function emit(event, message) {
 
 function send_message(message) {
     emit('message', message)
-    document.getElementById("chat_box").innerHTML += "<div><div class='message client_message'>" + message +"</div></div>";
+    print_message('client_message', message)
     // TODO: clear message input box
+}
+
+function print_message(owner, message) {
+    document.getElementById("chat_box").innerHTML +=
+        "<div><div class='message " + owner + "'>" + message + "</div></div>";
 }
