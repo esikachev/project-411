@@ -5,20 +5,12 @@
     <meta charset="utf-8">
     <title>Chat bot</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css.css')}}">
-    <!--TODO: possibly download and connect from local-->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
-        var socket = io.connect('http://' + document.domain + ':' + location.port);
-        socket.on('connect', function() {
-            emit('message', 'I\'m connected!');
-        });
-    </script>
     <script src="{{url_for('static', filename='js.js')}}"></script>
 </head>
 <body>
     <center>
-        <div id="chat_box" style="width: 500px">
-        </div>
+        <div id="chat_box" style="width: 500px"></div>
         <div>
             <input type="text" id="message_box">
             <button onclick="send_message(document.getElementById('message_box').value)">emit.</button>
