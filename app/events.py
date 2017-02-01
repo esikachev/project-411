@@ -6,6 +6,7 @@ from bot import response
 
 @socketio.on('status')
 def handle_message(message):
+    emit('message', 'Hello.')
     print('received status: ' + str(message))
 
 
