@@ -1,12 +1,16 @@
 language: python
 
-python:
-  - "2.7"
-
 cache: pip
 
-install:
-  - pip install -r requirements.txt
+before_install:
+  - pip install tox
+
+matrix:
+  include:
+     - python: 2.7
+       env: TOX_ENV=pep8
+     - python: 2.7
+       env: TOX_ENV=py27
 
 script:
-  - python tests/tests.py
+  - tox -e "${TOX_ENV}"
