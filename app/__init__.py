@@ -6,4 +6,6 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
-from app import routs, events
+if app:
+    import routs
+    import events
