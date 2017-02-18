@@ -1,22 +1,55 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>Chat bot</title>
     <link href="{{url_for('static', filename='favicon.ico')}}" rel="icon" type="image/x-icon" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link rel="stylesheet" href="{{url_for('static', filename='css.css')}}">
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
-    <script src="{{url_for('static', filename='js.js')}}"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}"> 
 </head>
 <body>
-    <center>
-        <div id="chat_box" style="width: 500px"></div>
-        <div>
-            <input type="text" id="message_box" title="message_box">
-            <button onclick="send_message(document.getElementById('message_box').value)">emit.</button>
-        </div>
-    </center>
+	<div class="wrapper">
+		<div class="container">
+			<div class="right">
+				<div class="top">
+					<span>To: <span class="name">Chat Bot</span></span>
+				</div>
+				<div id="chat" class="chat" data-chat="person">
+					<div class="conversation-start">
+						<span>Today, 5:38 PM</span>
+					</div>
+					<div class="bubble you">
+						Hello, can you hear me?
+					</div>
+					<div class="bubble you">
+						I'm in California dreaming
+					</div>
+					<div class="bubble me">
+						... about who we used to be.
+					</div>
+					<div class="bubble me">
+						Are you serious?
+					</div>
+					<div class="bubble you">
+						When we were younger and free...
+					</div>
+					<div class="bubble you">
+						I've forgotten how it felt before
+					</div>
+				</div>
+				<div id="writeBlock">
+					<div class="write">
+						<a href="javascript:;" class="write-link attach"></a>
+						<input type="text" id="message_box" />
+						<a href="javascript:;" class="write-link smiley"></a>
+						<a href="javascript:;" class="write-link send" id="send" onclick="sendMessage();"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+	<script src="{{url_for('static', filename='js/jquery.min.js')}}"></script>	
 </body>
 </html>
