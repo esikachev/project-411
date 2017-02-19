@@ -18,26 +18,24 @@ $('.left .person').mousedown(function(){
 });
 
 function sendMessage(){
-	var rand = Math.random() * 10;
-	var newDiv = document.createElement("div");
-	var objDiv = document.getElementById("chat");
-	var inputValue = document.getElementById('message_box').value;
-	
-	newDiv.innerHTML = inputValue;
-	
-	document.getElementById('message_box').value = '';
-	
-	if(rand < 5){
-		newDiv.className += " bubble you";
-	}
-	else{
-		newDiv.className += " bubble me";
-	}
-	
-	objDiv.appendChild(newDiv);
-	objDiv.scrollTop = objDiv.scrollHeight;
-	
+    var inputValue = document.getElementById('message_box').value;
+
+    document.getElementById('message_box').value = '';
+
 	emit('message', inputValue);
+
+	printMessage("me", inputValue)
+}
+
+function printMessage(sender, message) {
+    var newDiv = document.createElement("div");
+	var objDiv = document.getElementById("chat");
+
+    newDiv.innerHTML = message;
+	newDiv.className += " bubble" + " " + sender;
+
+    objDiv.appendChild(newDiv);
+	objDiv.scrollTop = objDiv.scrollHeight;
 }
 
 
@@ -47,7 +45,7 @@ socket.on('connect', function () {
 });
 
 socket.on('message', function(data){
-    print_message('bot_message', data);
+    printMessage('you', data);
 });
 
 function emit(event, message) {
