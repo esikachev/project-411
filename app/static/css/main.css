@@ -209,9 +209,7 @@ body {
   height: 42px;
   margin-left: 11px;
   content: '';
-  background-image: url("../img/send.png");
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url("../img/send-button.svg") no-repeat center;
 }
 .container .right .bubble {
   font-size: 16px;
