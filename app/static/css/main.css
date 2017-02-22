@@ -6,16 +6,13 @@
 }
 
 body {
-  background-color: #f8f8f8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-  background-image: url("../img/bg.jpg");
-  background-position: fixed;
-  background-size: cover;
-  background-repeat: none;
+    background-size: cover;
+    background: #f8f8f8 url("../img/bg.jpg");
 }
 
 .wrapper {
@@ -182,32 +179,12 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
 }
-.container .right .write .write-link.attach:before {
-  display: inline-block;
-  float: left;
-  width: 20px;
-  height: 42px;
-  content: '';
-  background-image: url("../img/attachemnt.png");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.container .right .write .write-link.smiley:before {
-  display: inline-block;
-  float: left;
-  width: 20px;
-  height: 42px;
-  content: '';
-  background-image: url("../img/smiley.png");
-  background-repeat: no-repeat;
-  background-position: center;
-}
 .container .right .write .write-link.send:before {
   display: inline-block;
-  float: left;
+  float: right;
+  margin-right: 11px;
   width: 20px;
   height: 42px;
-  margin-left: 11px;
   content: '';
   background: url("../img/send-button.svg") no-repeat center;
 }
