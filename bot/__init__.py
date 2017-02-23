@@ -1,3 +1,5 @@
+import os
+
 from sqlalchemy import Column
 from sqlalchemy import ForeignKey
 from sqlalchemy import Integer
@@ -10,8 +12,12 @@ from sqlalchemy.orm import sessionmaker, relationship
 Base = declarative_base()
 
 association_table = Table('association', Base.metadata,
-                          Column('key_word_id', Integer, ForeignKey('key_word.id')),
-                          Column('response_id', Integer, ForeignKey('response.id'))
+                          Column('key_word_id',
+                                 Integer,
+                                 ForeignKey('key_word.id')),
+                          Column('response_id',
+                                 Integer,
+                                 ForeignKey('response.id'))
                           )
 
 
@@ -35,7 +41,7 @@ class Response(Base):
         return self.text
 
 
-engine = create_engine('sqlite:///')
+engine = create_engine(os.environ.get("DATABASE_URL", 'sqlite:///'))
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
