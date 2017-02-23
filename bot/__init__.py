@@ -22,24 +22,28 @@ class KeyWord(Base):
     response = relationship("Response",
                             secondary=association_table)
 
+    def __str__(self):
+        return self.text
+
 
 class Response(Base):
     __tablename__ = 'response'
     id = Column(Integer, primary_key=True)
     text = Column(String(250))
 
+    def __str__(self):
+        return self.text
+
 
 engine = create_engine('sqlite:///')
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
-session.add(KeyWord(text='testerino'))
+session.add(KeyWord(text='hello', response=[Response(text='HELLO')]))
 
 
-def response(text):
+def get_response(text):
     tokens = text.split(' ')
-    print tokens
     response = session.query(KeyWord).filter(KeyWord.text == tokens[0]).first()
-    print response.response.text
-    if response:
-        return response.text
+    if response.response[0]:
+        return response.response[0].text
