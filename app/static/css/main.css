@@ -11,8 +11,11 @@ body {
   text-rendering: optimizeLegibility;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
-    background-size: cover;
-    background: #f8f8f8 url("../img/bg.jpg");
+  background: #f8f8f8 url("../img/bg.jpg") center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .wrapper {
