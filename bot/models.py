@@ -7,22 +7,21 @@ from sqlalchemy.orm import relationship
 
 from bot import Base
 
-association_table = Table('association', Base.metadata,
-                          Column('key_word_id',
-                                 Integer,
-                                 ForeignKey('key_word.id')),
-                          Column('response_id',
-                                 Integer,
-                                 ForeignKey('response.id'))
-                          )
+association = Table('association', Base.metadata,
+                    Column('request_id',
+                           Integer,
+                           ForeignKey('request.id')),
+                    Column('response_id',
+                           Integer,
+                           ForeignKey('response.id'))
+                    )
 
 
-class KeyWord(Base):
-    __tablename__ = 'key_word'
+class Request(Base):
+    __tablename__ = 'request'
     id = Column(Integer, primary_key=True)
     text = Column(String(250))
-    response = relationship("Response",
-                            secondary=association_table)
+    response = relationship("Response", secondary=association)
 
     def __str__(self):
         return self.text
