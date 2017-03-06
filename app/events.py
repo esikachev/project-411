@@ -12,5 +12,6 @@ def handle_message(message):
 
 @socketio.on('message')
 def handle_message(message):
-    emit('message', response())
     print('received message: ' + str(message))
+    if len(message) is not 0:
+        emit('message', response())
