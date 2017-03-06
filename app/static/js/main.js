@@ -28,14 +28,18 @@ function sendMessage() {
 }
 
 function printMessage(sender, message) {
-    var newDiv = document.createElement("div");
-    var objDiv = document.getElementById("chat");
+	message = message.trim();
+	
+	if(message != ''){
+		var newDiv = document.createElement("div");
+		var objDiv = document.getElementById("chat");
 
-    newDiv.innerHTML = message;
-    newDiv.className += " bubble" + " " + sender;
+		newDiv.textContent = message;
+		newDiv.className += " bubble" + " " + sender;
 
-    objDiv.appendChild(newDiv);
-    objDiv.scrollTop = objDiv.scrollHeight;
+		objDiv.appendChild(newDiv);
+		objDiv.scrollTop = objDiv.scrollHeight;
+	}
 }
 
 
