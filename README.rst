@@ -17,12 +17,25 @@ How to run application with docker
 
 .. code-block:: sh
 
-    $ docker build -t project-411 . && docker run -p 80:5000 project-41
+    $ docker build -t project-411 . && docker run -p 80:5000 project-411
 
 ..
 
-How to run tox tests
+How to run tests via tox
 --------
+
+Before running tests, you need install python-tox, python-dev packages via pip or easy_install.
+
+Use one of the following commands:
+
+.. code-block:: sh
+
+    $ pip install tox
+    $ easy_install tox
+
+..
+
+To run test follow: 
 
 .. code-block:: sh
 
