@@ -18,7 +18,7 @@ How to run application with docker
 How to run tests via tox
 --------
 
-Before running tests, you need install python-tox, python-dev packages via apt-get with sudo.
+Before running tests, you need to install python-tox, python-dev packages via apt-get with sudo.
 
 Use one of the following commands:
 
