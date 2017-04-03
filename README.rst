@@ -1,12 +1,12 @@
-project-411
+Project 411 group
 ===========
 
 .. image:: https://travis-ci.org/esikachev/project-411.svg?branch=master
     :target: https://travis-ci.org/esikachev/project-411
 
-Chat bot
+This repo contains a simple chat bot with the ability to learn during the session with the user.
 
-run with docker
+How to run application with docker
 ---------------
 
 .. code-block:: sh
@@ -15,10 +15,20 @@ run with docker
 
 ..
 
-run test
+How to run tests via tox
 --------
 
-You can simply run api tests, using tox:
+Before running tests, you need to install python-tox, python-dev packages via apt-get with sudo.
+
+Use one of the following commands:
+
+.. code-block:: sh
+
+    $ apt-get install python-tox python-dev
+
+..
+
+To run test follow: 
 
 .. code-block:: sh
 
