@@ -6,12 +6,6 @@ Project 411 group
 
 This repo contains a simple chat bot with the ability to learn during the session with the user.
 
-Requirements
----------------
-* eventlet==0.17.4
-* Flask==0.11.1
-* Flask-SocketIO==2.8.2
-
 How to run application with docker
 ---------------
 
@@ -24,14 +18,14 @@ How to run application with docker
 How to run tests via tox
 --------
 
-Before running tests, you need install python-tox, python-dev packages via pip or easy_install.
+Before running tests, you need install python-tox, python-dev packages via apt-get with sudo.
 
 Use one of the following commands:
 
 .. code-block:: sh
 
-    $ pip install tox
-    $ easy_install tox
+    $ apt-get install python-tox
+    $ apt-get install python-dev
 
 ..
 
