@@ -24,8 +24,7 @@ Use one of the following commands:
 
 .. code-block:: sh
 
-    $ apt-get install python-tox
-    $ apt-get install python-dev
+    $ apt-get install python-tox python-dev
 
 ..
 
