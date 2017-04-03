@@ -14,4 +14,4 @@ before_install:
 
 script:
   - tox
-  - curl 0.0.0.0:80
+  - curl -ILX GET 0.0.0.0:80
