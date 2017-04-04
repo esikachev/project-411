@@ -10,3 +10,4 @@ chatbot.train("chatterbot.corpus.english")
 
 def response(request):
     return str(chatbot.get_response(request))
+
