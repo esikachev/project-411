@@ -7,3 +7,5 @@ eventlet==0.17.4
 Flask==0.11.1
 Flask-SocketIO==2.8.2
 requests==2.13.0
+chatterbot==0.5.5
+
