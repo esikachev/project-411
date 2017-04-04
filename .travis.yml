@@ -2,15 +2,16 @@ language: python
 
 cache: pip
 
+sudo: required
+
+services:
+  - docker
+
 before_install:
   - pip install tox
-
-matrix:
-  include:
-     - python: 2.7
-       env: TOX_ENV=pep8
-     - python: 2.7
-       env: TOX_ENV=py27
+  - docker build -t project-411 .
+  - docker run -d -p 80:5000 project-411
 
 script:
-  - tox -e "${TOX_ENV}"
+  - tox
+  - curl -ILX GET 0.0.0.0:80
